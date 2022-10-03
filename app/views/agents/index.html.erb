@@ -1,0 +1,31 @@
+
+    <h1>Список контрагентов</h1>
+    <br>
+    <section class="tab-pane fade show active">
+      <div class="row">
+        <div class="col-md">
+          <%= link_to 'Создать', new_agent_path, class: 'btn btn-primary btn-sm'  %>
+          <table class="table table-sm">
+              <tr class="text-center">
+                <th>№</th>
+                <th>Название компании</th>
+                <th>Телефон</th>
+                <th>ИНН</th>
+                <th></th>
+              </tr>
+              <% @agents.each_with_index do |agent, i| %>
+              <tr class="text-center">
+                <%#raise agent.inspect %>
+                <th><%= i + 1 %></th>
+                <th><%= agent.brand %></th>
+                <th><%= agent.phone %></th>
+                <th><%= agent.inn %></th>
+                <th><%= link_to 'Просмотреть', edit_agent_path(agent.id), class: 'btn btn-primary btn-sm'  %></th>
+              </tr>
+              <% end %>
+          </table>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
